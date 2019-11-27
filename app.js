@@ -40,7 +40,7 @@ transactionRouter.route('/transactions',)
     });
 
 app.get('/',(req,res)=>{
-    res.send('Welcome to API!');
+    res.send('Welcome to API! This is myWallet API!');
 })
 app.listen(port,()=>{
     console.log('Running on port:'+port)
