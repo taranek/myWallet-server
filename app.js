@@ -2,7 +2,13 @@ const express = require('express');
 const moment = require('moment');
 const mongoose = require('mongoose');
 const app = express();
-const db = mongoose.connect('mongodb://localhost/myWalletAPI');
+var db;
+if (process.env.NODE_ENV!=="development"){
+  db = mongoose.connect('mongodb://taranek:taranekdb27@ds061807.mlab.com:61807/heroku_l21k4mc2');
+}
+else{
+  db = mongoose.connect('mongodb://localhost/myWalletAPI');
+}
 const transactionRouter = express.Router();
 const port = process.env.PORT || 4444;
 const clientAppPort = process.env.CLIENT_APP_PORT || 3333;
