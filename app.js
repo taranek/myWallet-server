@@ -17,7 +17,7 @@ const Transaction = require('./models/transactionModel')
 
 var cors = require('cors')
 
-var whitelist = [`http://localhost:${clientAppPort}`, 'https://taranek.github.io']
+var whitelist = [`http://localhost:${clientAppPort}`, 'https://taranek.github.io', 'https://taranek-my-wallet.herokuapp.com']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
