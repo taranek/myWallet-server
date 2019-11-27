@@ -1,0 +1,31 @@
+{
+  "name": "my-wallet-server",
+  "version": "1.0.0",
+  "description": "My wallet api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tomasz Taranek",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.7.12",
+    "nodemon": "^2.0.1"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000,
+      "CLIENT_APP_PORT":3333
+    }
+  }
+}
