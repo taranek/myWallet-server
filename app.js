@@ -3,6 +3,7 @@ const moment = require('moment');
 const mongoose = require('mongoose');
 const app = express();
 var db;
+
 if (process.env.NODE_ENV!=="development"){
   db = mongoose.connect('mongodb://taranek:taranekdb27@ds061807.mlab.com:61807/heroku_l21k4mc2');
 }
@@ -16,7 +17,7 @@ const Transaction = require('./models/transactionModel')
 
 var cors = require('cors')
 
-var whitelist = [`http://localhost:${clientAppPort}`]
+var whitelist = [`http://localhost:${clientAppPort}`, 'https://taranek.github.io/MyWallet/']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
